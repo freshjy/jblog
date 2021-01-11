@@ -13,7 +13,7 @@ public class BlogController {
 
 	@ResponseBody 
 	@RequestMapping({"", "/{category}", "/{category}/{post}" } )
-	public String index(
+	public String index( 
 		@PathVariable String id,
 		@PathVariable Optional<Long> category,
 		@PathVariable Optional<Long> post) {
