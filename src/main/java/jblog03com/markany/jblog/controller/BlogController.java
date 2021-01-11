@@ -20,7 +20,7 @@ public class BlogController {
 		System.out.println(id + ":" + category + ":" + post);
 		return "index";
 	} 
-
+ 
 //	@ResponseBody
 //	@RequestMapping("/{id}")
 //	public String index(@PathVariable String id) {
