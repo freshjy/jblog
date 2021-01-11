@@ -19,7 +19,7 @@ public class BlogController {
 		@PathVariable Optional<Long> post) {
 		System.out.println(id + ":" + category + ":" + post);
 		return "index";
-	}
+	} 
 
 //	@ResponseBody
 //	@RequestMapping("/{id}")
