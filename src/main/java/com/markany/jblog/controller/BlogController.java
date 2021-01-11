@@ -1,4 +1,4 @@
-package jblog03com.markany.jblog.controller;
+package com.markany.jblog.controller;
 
 import java.util.Optional;
 
@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/{id:(?!assets).*}")
 public class BlogController {
-
+	
+	@RequestMapping("")
+	public String index() {
+		return "main/index";
+	}
+	
+	
 	@ResponseBody 
 	@RequestMapping({"", "/{category}", "/{category}/{post}" } )
 	public String index( 
