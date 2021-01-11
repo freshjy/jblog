@@ -11,20 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/{id:(?!assets).*}")
 public class BlogController {
 	
-	@RequestMapping("")
-	public String index() {
-		return "main/index";
-	}
-	
-	
-	@ResponseBody 
 	@RequestMapping({"", "/{category}", "/{category}/{post}" } )
 	public String index( 
 		@PathVariable String id,
 		@PathVariable Optional<Long> category,
 		@PathVariable Optional<Long> post) {
 		System.out.println(id + ":" + category + ":" + post);
-		return "index";
+		return "main/index";
 	} 
  
 //	@ResponseBody
