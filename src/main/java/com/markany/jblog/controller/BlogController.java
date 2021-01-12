@@ -2,14 +2,19 @@ package com.markany.jblog.controller;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.markany.jblog.service.BlogService;
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}")
 public class BlogController {
+	
+	@Autowired
+	private BlogService blogService;
 	
 	@RequestMapping({"", "/{category}", "/{category}/{post}" } )
 	public String index( 
@@ -17,7 +22,7 @@ public class BlogController {
 		@PathVariable Optional<Long> category,
 		@PathVariable Optional<Long> post) {
 		System.out.println(id + ":" + category + ":" + post);
-		return "main/index";
+		return "blog/blog-main";
 	} 
  
 //	@ResponseBody
