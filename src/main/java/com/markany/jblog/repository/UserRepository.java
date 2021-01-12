@@ -13,9 +13,9 @@ public class UserRepository {
 	private SqlSession sqlSession;
 
 	public int insert(UserVo userVo) {
-		System.out.println(userVo);
-		//return sqlSession.insert("user.insert", userVo);
-		return 0;
+		//System.out.println(userVo);
+		return sqlSession.insert("user.insertUser", userVo);
+		//return 0;
 	}
 
 }
