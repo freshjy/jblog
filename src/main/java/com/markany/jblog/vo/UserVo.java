@@ -5,6 +5,7 @@ public class UserVo {
 	private String name;
 	private String password;
 	private String joinDate;
+	
 	public String getId() {
 		return id;
 	}

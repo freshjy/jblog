@@ -12,10 +12,12 @@ public class UserRepository {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int insert(UserVo userVo) {
-		//System.out.println(userVo);
+	public int insertUser(UserVo userVo) {
 		return sqlSession.insert("user.insertUser", userVo);
-		//return 0;
+	}
+
+	public UserVo findByIdAndPassword(UserVo userVo) {
+		return sqlSession.selectOne("user.findByIdAndPassword", userVo);
 	}
 
 }
